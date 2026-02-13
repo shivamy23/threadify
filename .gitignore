@@ -1,7 +1,11 @@
 # Python
-backend/venv/
+venv/
+.env
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.idea/
 
 # Node
 frontend/node_modules/
