@@ -193,7 +193,7 @@ pip install -r requirements.txt
 
 4. Create `.env` file:
 ```env
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/threadify
+MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/<dbname>
 JWT_SECRET=your-secret-key-here
 JWT_ALGORITHM=HS256
 JWT_EXPIRE_MINUTES=60
