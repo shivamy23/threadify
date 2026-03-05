@@ -19,7 +19,7 @@ def get_current_user(
     try:
         # Decode JWT
         payload = decode_access_token(token)
-        user_id = payload.get("user_id")
+        user_id = payload.get("sub")  # Use 'sub' as standard JWT claim
 
         if user_id is None:
             raise HTTPException(

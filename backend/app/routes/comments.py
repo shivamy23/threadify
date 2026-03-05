@@ -57,7 +57,7 @@ def get_comments(post_id: str):
         comments.append({
             "id": str(comment["_id"]),
             "content": comment["content"],
-            "author_id": comment["author_id"],
+            "author_id": comment.get("user_id", comment.get("author_id")),
             "flagged": comment.get("flagged", False)
         })
 
@@ -78,8 +78,9 @@ def delete_comment(
         raise HTTPException(status_code=404, detail="Comment not found")
 
     # Admin can delete any comment
-    if current_user["role"] != "admin":
-        if comment["author_id"] != str(current_user["_id"]):
+    if current_user.get("role") != "admin":
+        comment_user_id = comment.get("user_id", comment.get("author_id"))
+        if comment_user_id != str(current_user["_id"]):
             raise HTTPException(status_code=403, detail="Not allowed to delete this comment")
 
     comments_collection.delete_one({"_id": ObjectId(comment_id)})
