@@ -1,14 +1,7 @@
-# Python
+.env
+backend/.env
+frontend/.env
 venv/
-.env
+node_modules/
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-.idea/
-
-# Node
-frontend/node_modules/
-
-# Environment
-.env
+uploads/
