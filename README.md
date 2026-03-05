@@ -292,7 +292,7 @@ The app will be available at `http://localhost:5173`
 ### Backend (.env)
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `MONGO_URI` | Example: `mongodb+srv://<user>:<password>@cluster.mongodb.net/<dbname>` | Yes |
+| `MONGO_URI` | Example: mongodb+srv://<user>:<password>@cluster.mongodb.net/<dbname> | Yes |
 | `JWT_SECRET` | Secret key for JWT tokens | Yes |
 | `JWT_ALGORITHM` | JWT algorithm (HS256) | Yes |
 | `JWT_EXPIRE_MINUTES` | Token expiration time | Yes |
